@@ -1,4 +1,4 @@
-from idle_time import IdleMonitor
+from os import popen
 
 
 class Addon():
@@ -7,7 +7,5 @@ class Addon():
     unit = 'sec'
 
     def getInfo(self):
-        monitor = IdleMonitor.get_monitor()
-        idle_sec = monitor.get_idle_time()
-        # idle_min = int(idle_sec / 60)
-        return round(idle_sec, 0)
+        milliseconds_string = popen("xprintidle").read()
+        return int(milliseconds_string)/1000

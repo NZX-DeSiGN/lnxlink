@@ -121,13 +121,7 @@ lnxlink -c config.yaml
 ```
 
 ## Idle time not working
-Idle time module is dependend on [idle-time](https://pypi.org/project/idle-time/) which only supports __Gnome Mutter__ for now.
-If you want support for this, you can install the newest version from my github:
-```shell
-pip3 uninstall idle_time
-pip3 install 'idle_time @ git+https://github.com/bkbilly/idle_time.git'
-systemctl --user restart lnxlink.service
-```
+Idle time module is dependend on [xprintidle](https://github.com/g0hl1n/xprintidle).
 
 
 
