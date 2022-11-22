@@ -17,13 +17,13 @@ service_user = """[Unit]
 Description=LNXLink
 After=network-online.target multi-user.target graphical.target
 PartOf=graphical-session.target
- 
+
 [Service]
 Type=simple
 Restart=always
 
 ExecStart={exec_cmd}
- 
+
 [Install]
 WantedBy=default.target
 """
@@ -51,7 +51,7 @@ modules:
 - restart
 - send_keys
 - notify
-- cpu
+- cpu_usage
 - memory
 - network_upload
 - network_download
