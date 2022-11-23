@@ -147,7 +147,7 @@ class LNXlink():
         topic = f"{self.pref_topic}/{self.config['mqtt']['statsPrefix']}/{subtopic}"
 
         discovery = discovery_template.copy()
-        discovery['name'] = addon.name.lower().replace(' ', '_')
+        discovery['name'] = addon.name
         discovery['unique_id'] = f"{self.config['mqtt']['clientId']}_{service}"
         discovery['state_topic'] = topic
         discovery['json_attributes_topic'] = topic
@@ -172,7 +172,7 @@ class LNXlink():
     def setup_discovery_control(self, addon, service, control_name, options, discovery_template):
         subtopic = addon.name.lower().replace(' ', '/')
         discovery = discovery_template.copy()
-        discovery['name'] = control_name.lower().replace(' ', '_')
+        discovery['name'] = addon.name
         discovery['unique_id'] = f"{self.config['mqtt']['clientId']}_{control_name}"
         discovery['icon'] = options.get('icon', '')
 
