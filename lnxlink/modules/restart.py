@@ -6,7 +6,7 @@ class Addon():
     unit = 'button'
 
     def startControl(self, topic, data):
-        subprocess.call(["shutdown", "-r", "now"])
+        subprocess.call(["/usr/sbin/shutdown", "-r", "now"])
 
     def exposedControls(self):
         return {
